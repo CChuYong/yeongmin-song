@@ -1,4 +1,4 @@
-import './globals.css'
+import './globals_bak.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
@@ -16,6 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+    123123
       <body className={inter.className}>{children}</body>
     </html>
   )
