@@ -1,6 +1,6 @@
 import '../app/global.css';
 import Image from "next/image";
-import { UserCircle } from 'iconoir-react';
+import {UserCircle, Building, Folder, Instagram, LinkedIn, GithubCircle} from 'iconoir-react';
 
 export default function Index() {
   return <div style={{
@@ -24,7 +24,8 @@ export default function Index() {
         </div>
       </div>
       <div>
-        <Image src={"/yeongmin.png"} width={300} height={300} className="w-[28rem] h-[28rem]"/>
+        {/*<Image src={"/yeongmin.png"} width={300} height={300} className="w-[28rem] h-[28rem]"/>*/}
+      <div/>
       </div>
     </div>
   <SlideToNext/>
@@ -33,9 +34,18 @@ export default function Index() {
 }
 
 function Sidebar() {
-  return <div className="h-screen w-24 bg-stone-900">
-    <div className="flex flex-col items-center">
-      <UserCircle className="text-slate-50 w-10 h-10"/>
+  return <div className="h-screen w-20 bg-stone-900">
+    <div className="flex flex-col justify-between items-center py-5 h-screen">
+      <div className="flex flex-col items-center gap-5">
+        <UserCircle className="text-slate-50 w-10 h-10"/>
+        <Building className="text-slate-50 h-11 w-14"/>
+        <Folder className="text-slate-50 w-10 h-10"/>
+      </div>
+      <div className="flex flex-col items-center gap-5">
+        <Instagram className="text-slate-50 w-10 h-10"/>
+        <LinkedIn className="text-slate-50 h-11 w-14"/>
+        <GithubCircle className="text-slate-50 w-10 h-10"/>
+      </div>
     </div>
 
   </div>
@@ -63,6 +73,6 @@ function CopyRight() {
 
 function SlideToNext() {
   return <div className="absolute bottom-0 right-0 text-slate-50 pr-10 pb-10 text-1xl [writing-mode:vertical-lr]">
-    <span>SLIDE TO NEXT -></span>
+    <span>SLIDE TO NEXT &gt;</span>
   </div>
 }
