@@ -50,7 +50,11 @@ function Sidebar() {
     </div>
 }
 
-function Button({text}: { text: string }) {
+interface ButtonProps {
+    text: string
+}
+
+function Button({text}: ButtonProps) {
     return <div
         className="w-fit button-box"
         style={{
