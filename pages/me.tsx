@@ -4,16 +4,31 @@ import {Building, Folder, GithubCircle, Instagram, LinkedIn, UserCircle} from 'i
 export default function Index() {
     return <div style={{
         display: 'flex',
-        flexDirection: 'row',
-        height: '100vh'
+        flexDirection: 'row'
     }}>
-        <div className="flex flex-row justify-center items-center grow gap-20">
-            <span className="text-8xl">🛠️</span>
+        <Sidebar/>
+        <CopyRight/>
+        <div className="flex flex-row justify-evenly items-center grow">
             <div className="flex flex-col text-slate-50">
-                <span className="text-7xl">Under Construction</span>
-                <span className="text-5xl font-regular">Check Back Later!</span>
+                <div className="w-40 h-2 bg-white"/>
+                <div className="h-2"/>
+                <span className="text-6xl">Welcome To</span>
+                <span className="text-7xl">YEONGMIN SONG</span>
+                <div className="h-3"/>
+                <span className="text-5xl font-regular">SERVER & INFRA ENGINEER</span>
+                <div className="h-11"/>
+                <div className="flex flex-row gap-4">
+                    <Button text={"PROJECTS"}/>
+                    <Button text={"CAREER"}/>
+                </div>
+            </div>
+            <div>
+                {/*<Image src={"/yeongmin.png"} width={300} height={300} className="w-[28rem] h-[28rem]"/>*/}
+                <div/>
             </div>
         </div>
+        <SlideToNext/>
+
     </div>
 }
 
