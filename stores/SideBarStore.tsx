@@ -7,10 +7,14 @@ export enum SideBarExternalLink {
 }
 
 interface SideBarState {
+  currentPage: number,
+  updatePage: (page: number) => void,
   onExternalLink: (link: SideBarExternalLink) => void
 }
 
 const useSideBarStore = create<SideBarState>()((set) => ({
+  currentPage: 0,
+  updatePage: page => set({currentPage: page}),
   onExternalLink: link => {
     window.location.href = link;
   }
