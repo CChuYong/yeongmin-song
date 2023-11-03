@@ -6,12 +6,8 @@ interface ButtonProps {
 export default function Button({text, onTap}: ButtonProps) {
   return <div
     onClick={onTap}
-    className="w-fit button-box hover:cursor-pointer hover:scale-95"
+    className="w-fit button-box hover:cursor-pointer hover:scale-95 border-2 inline-block border-b-blue-100 px-20 py-3.5"
     style={{
-      borderColor: '#BFDBFE',
-      borderWidth: '2.3px',
-      padding: '14px 66px 14px 66px',
-      display: 'inline-block',
       fontFamily: 'Pretendard-Regular',
     }}>
     {text}
