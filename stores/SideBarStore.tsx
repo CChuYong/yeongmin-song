@@ -6,6 +6,12 @@ export enum SideBarExternalLink {
   GITHUB = "https://github.com/cchuyong",
 }
 
+const pageRoutes = {
+  0: '/me',
+  1: '/career',
+  2: '/projects',
+}
+
 interface SideBarState {
   currentPage: number,
   updatePage: (page: number) => void,
@@ -14,7 +20,9 @@ interface SideBarState {
 
 const useSideBarStore = create<SideBarState>()((set) => ({
   currentPage: 0,
-  updatePage: page => set({currentPage: page}),
+  updatePage: page => {
+    set({currentPage: page});
+  },
   onExternalLink: link => {
     window.location.href = link;
   }
