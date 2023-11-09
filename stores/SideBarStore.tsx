@@ -1,4 +1,5 @@
 import {create} from "zustand";
+import {NextRouter, useRouter} from "next/router";
 
 export enum SideBarExternalLink {
   INSTAGRAM = "https://www.instagram.com/fflowerggem__/",
@@ -6,21 +7,22 @@ export enum SideBarExternalLink {
   GITHUB = "https://github.com/cchuyong",
 }
 
-const pageRoutes = {
+const pageRoutes: Record<number, String> = {
   0: '/me',
   1: '/career',
-  2: '/projects',
+  2: '/project',
 }
 
 interface SideBarState {
   currentPage: number,
-  updatePage: (page: number) => void,
+  updatePage: (router: NextRouter, page: number) => void,
   onExternalLink: (link: SideBarExternalLink) => void
 }
 
 const useSideBarStore = create<SideBarState>()((set) => ({
   currentPage: 0,
-  updatePage: page => {
+  updatePage: (router, page) => {
+    router.push(pageRoutes[page]);
     set({currentPage: page});
   },
   onExternalLink: link => {

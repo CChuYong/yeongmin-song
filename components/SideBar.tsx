@@ -1,21 +1,23 @@
 import {Building, Folder, GithubCircle, Instagram, LinkedIn, UserCircle} from "iconoir-react";
 import useSideBarStore, {SideBarExternalLink} from "@/stores/SideBarStore";
 import {ReactNode} from "react";
+import {useRouter} from "next/router";
 
 export default function Sidebar() {
+  const router = useRouter();
   const { currentPage, updatePage, onExternalLink } = useSideBarStore();
   return <div className="h-screen w-20 bg-stone-900">
     <div className="flex flex-col justify-between items-center py-5 h-screen">
       <div className="flex flex-col items-center gap-5">
-        <PageButton isCurrentPage={currentPage == 0} onTap={() => updatePage(0)}>
+        <PageButton isCurrentPage={currentPage == 0} onTap={() => updatePage(router, 0)}>
           <UserCircle className="text-slate-50 w-10 h-10 hover:cursor-pointer hover:scale-90"/>
         </PageButton>
 
-        <PageButton isCurrentPage={currentPage == 1} onTap={() => updatePage(1)}>
+        <PageButton isCurrentPage={currentPage == 1} onTap={() => updatePage(router, 1)}>
           <Building className="text-slate-50 h-11 w-14 hover:cursor-pointer hover:scale-90"/>
         </PageButton>
 
-        <PageButton isCurrentPage={currentPage == 2} onTap={() => updatePage(2)}>
+        <PageButton isCurrentPage={currentPage == 2} onTap={() => updatePage(router, 2)}>
           <Folder className="text-slate-50 w-10 h-10 hover:cursor-pointer hover:scale-90"/>
         </PageButton>
       </div>
